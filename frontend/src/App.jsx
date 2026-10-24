@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     async function loadAnalysis() {
       try {
-        const response = await fetch(`${API_URL}/api/analysis`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL || API_URL}/api/analysis`);
 
         if (!response.ok) {
           throw new Error(`API request failed: ${response.status}`);
