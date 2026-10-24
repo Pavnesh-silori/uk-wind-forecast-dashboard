@@ -12,6 +12,7 @@ import {
 import "./App.css";
 
 const API_URL = "http://127.0.0.1:8000";
+const VITE_API_URL= "http://uk-wind-forecast-api-env.eba-4j4puvyp.ap-south-1.elasticbeanstalk.com";
 
 function App() {
   const [analysis, setAnalysis] = useState(null);
@@ -21,7 +22,7 @@ function App() {
   useEffect(() => {
     async function loadAnalysis() {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL || API_URL}/api/analysis`);
+        const response = await fetch(`${VITE_API_URL || API_URL}/api/analysis`);
 
         if (!response.ok) {
           throw new Error(`API request failed: ${response.status}`);
